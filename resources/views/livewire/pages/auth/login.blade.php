@@ -5,67 +5,98 @@ use Illuminate\Support\Facades\Session;
 use Livewire\Attributes\Layout;
 use Livewire\Volt\Component;
 
-new #[Layout('layouts.guest')] class extends Component
-{
+new #[Layout('layouts.guest')] class extends Component {
     public LoginForm $form;
 
     /**
      * Handle an incoming authentication request.
      */
-    public function login(): void
-    {
+    public function login(): void {
         $this->validate();
-
         $this->form->authenticate();
-
         Session::regenerate();
-
-        $this->redirectIntended(default: route('dashboard', absolute: false), navigate: true);
+        $this->redirect(route('home'), navigate: true);
     }
 }; ?>
 
-<div>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
-
-    <form wire:submit="login">
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input wire:model="form.email" id="email" class="block mt-1 w-full" type="email" name="email" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('form.email')" class="mt-2" />
-        </div>
-
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input wire:model="form.password" id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('form.password')" class="mt-2" />
-        </div>
-
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember" class="inline-flex items-center">
-                <input wire:model="form.remember" id="remember" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}" wire:navigate>
-                    {{ __('Forgot your password?') }}
+<section>
+    <div class="signin-header">
+        <div class="row align-items-center">
+            <div class="col-sm-4">
+                <a href="{{ route('home') }}" wire:navigate class="site-logo">
+                    <img src="{{ asset('front/images/logo/logo.png')}}" alt="logo"/>
                 </a>
-            @endif
-
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
+            </div>
+            <div class="col-sm-8">
+                <div class="singin-header-btn">
+                    <p>
+                        Not a member?
+                    </p>
+                    <a href="{{ route('register') }}" wire:navigate class="axil-btn btn-bg-secondary sign-up-btn">
+                        Sign Up Now
+                    </a>
+                </div>
+            </div>
         </div>
-    </form>
-</div>
+    </div>
+    <!-- End Header -->
+    <div class="row">
+        <div class="col-xl-4 col-lg-6">
+            <div class="axil-signin-banner bg_image bg_image--9">
+                <h3 class="title">
+                    We Offer the Best Products
+                </h3>
+            </div>
+        </div>
+        <div class="col-lg-6 offset-xl-2">
+            <div class="axil-signin-form-wrap">
+                <div class="axil-signin-form">
+                    <h3 class="title">
+                        Sign in to eTrade.
+                    </h3>
+                    <p class="b2 mb--55">
+                        Enter your detail below
+                    </p>
+                    <form class="singin-form" method="POST" wire:submit="login">
+                        @csrf
+                        <ul class="list-group mb-3">
+                            @foreach($errors->all() as $error)
+                                <li class="list-group-item list-group-item-danger text-danger">
+                                    {{ $error }}
+                                </li>
+                            @endforeach
+                        </ul>
+                        <div class="form-group">
+                            <label for="email">
+                                Email
+                            </label>
+                            <input type="email" wire:model="form.email" :value="old('email')" required autofocus
+                                   @class(['form-control', 'is-invalid' => $errors->has('form.email')]) name="email"
+                                   autocomplete="username" id="email" maxlength="255"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">
+                                Password
+                            </label>
+                            <input type="password" wire:model="form.password" autocomplete="current-password" required
+                                   @class(['form-control', 'is-invalid' => $errors->has('form.password')]) name="password"
+                                   id="password" maxlength="255" minlength="8"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" wire:model="form.remember" name="remember" id="remember_me"
+                                   class="form-control"/>
+                            <label for="remember_me">
+                                Remember me
+                            </label>
+                        </div>
+                        <div class="form-group d-flex align-items-center justify-content-between">
+                            <button type="submit" class="axil-btn btn-bg-primary submit-btn">
+                                Sign In
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
