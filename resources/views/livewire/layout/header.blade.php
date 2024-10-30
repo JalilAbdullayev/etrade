@@ -63,7 +63,7 @@ new class extends Component {
                                 </a>
                             </li>
                             <li>
-                                <a href="about-us.html">
+                                <a href="{{ route('about') }}" wire:navigate @class(['active' => Route::is('about')])>
                                     About
                                 </a>
                             </li>
