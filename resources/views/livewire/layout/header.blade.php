@@ -8,7 +8,7 @@ new class extends Component {
         Auth::logout();
         Session::invalidate();
         Session::regenerateToken();
-        return $this->redirect(route('home'), navigate: true);
+        return $this->redirect(route('home'), true);
     }
 }; ?>
 
@@ -21,12 +21,12 @@ new class extends Component {
                         <ul class="quick-link">
                             @guest
                                 <li>
-                                    <a href="{{ route('register') }}">
+                                    <a href="{{ route('register') }}" wire:navigate>
                                         Join Us
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('login') }}">
+                                    <a href="{{ route('login') }}" wire:navigate>
                                         Sign In
                                     </a>
                                 </li>
@@ -102,7 +102,7 @@ new class extends Component {
                                 <div class="my-account-dropdown">
                                     <ul>
                                         <li>
-                                            <a href="#">
+                                            <a href="{{ route('account') }}" wire:navigate>
                                                 My Account
                                             </a>
                                         </li>
