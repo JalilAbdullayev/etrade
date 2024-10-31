@@ -7,7 +7,7 @@ new class extends Component {
 }; ?>
 
     <!-- Start Axil Newsletter Area  -->
-<div class="axil-newsletter-area axil-section-gap pt--0">
+<div @class(['axil-newsletter-area axil-section-gap', 'pt--0' => !Route::is('about')])>
     <div class="container">
         <div class="etrade-newsletter-wrapper bg_image bg_image--5">
             <div class="newsletter-content">
