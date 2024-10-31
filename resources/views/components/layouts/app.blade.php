@@ -25,7 +25,9 @@
 <livewire:layout.header/>
 <main class="main-wrapper">
     {{ $slot }}
-    <livewire:layout.newsletter/>
+    @unless(Route::is('contact'))
+        <livewire:layout.newsletter/>
+    @endunless
 </main>
 <livewire:layout.services/>
 <livewire:layout.footer/>
