@@ -8,7 +8,7 @@ new class extends Component {
         Auth::logout();
         Session::invalidate();
         Session::regenerateToken();
-        return $this->redirect(route('home'), true);
+        return $this->redirectIntended(route('home'), true);
     }
 }; ?>
 
@@ -68,6 +68,11 @@ new class extends Component {
                                 </a>
                             </li>
                             <li>
+                                <a href="{{ route('blog') }}" wire:navigate @class(['active' => Route::is('blog')])>
+                                    Blog
+                                </a>
+                            </li>
+                            <li>
                                 <a href="{{ route('about') }}" wire:navigate @class(['active' => Route::is('about')])>
                                     About
                                 </a>
@@ -76,12 +81,6 @@ new class extends Component {
                                 <a href="{{ route('contact') }}" wire:navigate
                                     @class(['active' => Route::is('contact')])>
                                     Contact
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('privacy') }}" wire:navigate
-                                    @class(['active' => Route::is('privacy')])>
-                                    Privacy Policy
                                 </a>
                             </li>
                         </ul>

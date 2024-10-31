@@ -12,6 +12,9 @@ Volt::route('checkout', 'checkout')->name('checkout');
 Volt::route('privacy-policy', 'privacy')->name('privacy');
 Volt::route('shop', 'shop')->name('shop');
 Volt::route('product', 'product')->name('product');
+Volt::route('blog', 'blog')->name('blog');
+Volt::route('article', 'article')->name('article');
+Volt::route('terms-of-use', 'terms')->name('terms');
 
 Route::middleware(['auth', 'verified'])->group(function() {
     Volt::route('account', 'account')->name('account');

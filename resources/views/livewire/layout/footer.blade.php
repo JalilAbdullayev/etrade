@@ -54,11 +54,40 @@ new class extends Component {
                         </h5>
                         <div class="inner">
                             <ul>
-                                <li><a href="my-account.html">My Account</a></li>
-                                <li><a href="sign-up.html">Login / Register</a></li>
-                                <li><a href="cart.html">Cart</a></li>
-                                <li><a href="wishlist.html">Wishlist</a></li>
-                                <li><a href="shop.html">Shop</a></li>
+                                @auth
+                                    <li>
+                                        <a href="{{ route('account') }}" wire:navigate>
+                                            My Account
+                                        </a>
+                                    </li>
+                                @endauth
+                                @guest
+                                    <li>
+                                        <a href="{{ route('login') }}" wire:navigate>
+                                            Login
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('register') }}" wire:navigate>
+                                            Register
+                                        </a>
+                                    </li>
+                                @endguest
+                                <li>
+                                    <a href="{{ route('cart') }}" wire:navigate>
+                                        Cart
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('wishlist') }}" wire:navigate>
+                                        Wishlist
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('shop') }}" wire:navigate>
+                                        Shop
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -73,22 +102,17 @@ new class extends Component {
                         <div class="inner">
                             <ul>
                                 <li>
-                                    <a href="privacy-policy.html">
+                                    <a href="{{ route('privacy') }}" wire:navigate>
                                         Privacy Policy
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="terms-of-service.html">
+                                    <a href="{{ route('terms') }}" wire:navigate>
                                         Terms Of Use
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        FAQ
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="contact.html">
+                                    <a href="{{ route('contact') }}" wire:navigate>
                                         Contact
                                     </a>
                                 </li>
@@ -107,7 +131,9 @@ new class extends Component {
             <div class="row align-items-center">
                 <div class="col-xl-4">
                     <div class="social-share">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-12">
