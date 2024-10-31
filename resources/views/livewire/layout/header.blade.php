@@ -85,7 +85,7 @@ new class extends Component {
                             </a>
                         </li>
                         <li class="wishlist">
-                            <a href="wishlist.html">
+                            <a href="{{ route('wishlist') }}" wire:navigate>
                                 <i class="flaticon-heart"></i>
                             </a>
                         </li>
