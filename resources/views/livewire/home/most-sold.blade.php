@@ -18,7 +18,7 @@ new class extends Component {
                 <div class="col">
                     <div class="axil-product-list">
                         <div class="thumbnail">
-                            <a href="single-product.html">
+                            <a href="{{ route('product') }}" wire:navigate>
                                 <img data-sal="zoom-in" data-sal-delay="100" data-sal-duration="1500"
                                      src="front/images/product/electric/product-09.png" alt="Yantiti Leather Bags">
                             </a>
@@ -34,7 +34,8 @@ new class extends Component {
                                 </span>
                                 <span class="rating-number"><span>100+</span> Reviews</span>
                             </div>
-                            <h6 class="product-title"><a href="single-product.html">Media Remote</a></h6>
+                            <h6 class="product-title"><a href="{{ route('product') }}" wire:navigate>Media Remote</a>
+                            </h6>
                             <div class="product-price-variant">
                                 <span class="price current-price">$29.99</span>
                                 <span class="price old-price">$49.99</span>

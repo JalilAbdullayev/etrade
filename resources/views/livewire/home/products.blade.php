@@ -24,7 +24,7 @@ new class extends Component {
                     <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb--30">
                         <div class="axil-product product-style-one">
                             <div class="thumbnail">
-                                <a href="single-product.html">
+                                <a href="{{ route('product') }}" wire:navigate>
                                     <img data-sal="zoom-out" data-sal-delay="200" data-sal-duration="800" loading="lazy"
                                          class="main-img" src="front/images/product/electric/product-01.png"
                                          alt="Product Images"/>
@@ -44,7 +44,7 @@ new class extends Component {
                                             </a>
                                         </li>
                                         <li class="select-option">
-                                            <a href="single-product.html">
+                                            <a href="{{ route('product') }}" wire:navigate>
                                                 Add to Cart
                                             </a>
                                         </li>
@@ -67,7 +67,7 @@ new class extends Component {
                                             (64)
                                         </span>
                                     </div>
-                                    <h5 class="title"><a href="single-product.html">
+                                    <h5 class="title"><a href="{{ route('product') }}" wire:navigate>
                                             Yantiti Leather & Canvas Bags
                                         </a>
                                     </h5>
@@ -90,7 +90,7 @@ new class extends Component {
         </div>
         <div class="row">
             <div class="col-lg-12 text-center mt--20 mt_sm--0">
-                <a href="shop.html" class="axil-btn btn-bg-lighter btn-load-more">
+                <a href="{{ route('shop') }}" wire:navigate class="axil-btn btn-bg-lighter btn-load-more">
                     View All Products
                 </a>
             </div>
