@@ -29,13 +29,6 @@ new class extends Component {
                     </h1>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-4">
-                <div class="inner">
-                    <div class="bradcrumb-thumb">
-                        <img src="{{ asset('front/images/product/product-45.png')}}" alt="Image"/>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
