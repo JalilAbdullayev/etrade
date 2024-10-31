@@ -16,7 +16,8 @@ export default defineConfig({
                 'public/front/css/vendor/sal.css',
                 'public/front/css/vendor/magnific-popup.css',
                 'public/front/css/vendor/base.css',
-                'public/front/css/style.min.css'
+                'public/front/css/style.min.css',
+                'public/back/css/style.min.css'
             ],
             refresh: true,
         }),

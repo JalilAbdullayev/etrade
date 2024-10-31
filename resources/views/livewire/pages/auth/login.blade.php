@@ -15,7 +15,7 @@ new #[Layout('layouts.guest')] class extends Component {
         $this->validate();
         $this->form->authenticate();
         Session::regenerate();
-        $this->redirectIntended(route('home'), true);
+        $this->redirectIntended(route('home'));
     }
 }; ?>
 

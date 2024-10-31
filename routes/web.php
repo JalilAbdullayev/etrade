@@ -18,6 +18,10 @@ Volt::route('terms-of-use', 'terms')->name('terms');
 
 Route::middleware(['auth', 'verified'])->group(function() {
     Volt::route('account', 'account')->name('account');
+
+    Route::prefix('admin')->name('admin.')->group(function() {
+        Volt::route('/', 'admin.index')->name('index');
+    });
 });
 
 require __DIR__ . '/auth.php';
