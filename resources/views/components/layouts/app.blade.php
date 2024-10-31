@@ -3,11 +3,25 @@
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <title>
-        eTrade
-    </title>
-    <meta name="description" content=""/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content="@yield('description')"/>
+    <meta name="keywords" content="@yield('keywords')"/>
+    <meta name="author" content="@yield('author')"/>
+    {{-- Facebook --}}
+    <meta property="og:url" content="{{ URL::current() }}"/>
+    <meta property="og:type" content="@yield('type', 'website')"/>
+    <meta property="og:title" content="@yield('title')"/>
+    <meta property="og:description" content="@yield('description')"/>
+    <meta property="og:image" content="@yield('image', asset(''))"/>
+    {{-- X (Twitter) --}}
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="{{ url()->current() }}"/>
+    <meta name="twitter:title" content="@yield('title')"/>
+    <meta name="twitter:description" content="@yield('description')"/>
+    <meta name="twitter:image" content="@yield('image', asset(''))"/>
+    <title>
+        {{ $title ?? 'eTrade' }}
+    </title>
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('front/images/favicon.png')}}"/>
     <!-- CSS ============================================ -->

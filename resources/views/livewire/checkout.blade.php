@@ -1,9 +1,11 @@
 <?php
 
+use Livewire\Attributes\Title;
 use Livewire\Volt\Component;
 
 new class extends Component {
-    //
+    #[Title('Checkout')]
+    public function mount() {}
 }; ?>
 
     <!-- Start Checkout Area  -->

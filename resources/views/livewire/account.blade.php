@@ -4,6 +4,7 @@ use App\Models\User;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Support\Facades\Auth;
+use Livewire\Attributes\Title;
 use Livewire\Volt\Component;
 
 new class extends Component {
@@ -34,6 +35,7 @@ new class extends Component {
         return $this->redirectIntended(route('account'), true);
     }
 
+    #[Title('My Account')]
     public function mount() {
         $this->name = Auth::user()->name;
         $this->email = Auth::user()->email;

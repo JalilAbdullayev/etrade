@@ -1,9 +1,11 @@
 <?php
 
+use Livewire\Attributes\Title;
 use Livewire\Volt\Component;
 
 new class extends Component {
-    //
+    #[Title('Wishlist')]
+    public function mount() {}
 }; ?>
 
     <!-- Start Wishlist Area  -->
