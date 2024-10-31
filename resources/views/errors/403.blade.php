@@ -1,0 +1,5 @@
+@extends('errors.layout')
+@section('title', 'Forbidden')
+@section('subtitle', "Access denied.")
+@section('message', "You don't have permission to access this page. Please check your credentials or contact the site administrator.")
+@section('code', 500)

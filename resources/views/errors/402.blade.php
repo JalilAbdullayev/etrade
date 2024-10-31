@@ -1,0 +1,5 @@
+@extends('errors.layout')
+@section('title', 'Payment Required')
+@section('subtitle', "Payment is needed.")
+@section('message', "You need to make a payment to access this page or feature. Please complete the payment process to continue.")
+@section('code', 402)

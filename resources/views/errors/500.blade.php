@@ -1,0 +1,5 @@
+@extends('errors.layout')
+@section('title', 'Server Error')
+@section('subtitle', "Oops! Something's wrong.")
+@section('message', "It seems like we're having some trouble. Our team is working to resolve the issue. Please try again later.")
+@section('code', 500)

@@ -1,0 +1,5 @@
+@extends('errors.layout')
+@section('title', 'Too Many Requests')
+@section('subtitle', "You're making too many requests!")
+@section('message', "Slow down! You've exceeded the maximum number of requests allowed. Please try again later.")
+@section('code', 429)

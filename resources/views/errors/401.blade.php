@@ -1,0 +1,5 @@
+@extends('errors.layout')
+@section('title', 'Unauthorized')
+@section('subtitle', "You need to log in.")
+@section('message', "Please authenticate to access this page. Enter your credentials to continue.")
+@section('code', 401)

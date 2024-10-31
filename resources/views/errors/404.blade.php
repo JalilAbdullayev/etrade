@@ -1,0 +1,5 @@
+@extends('errors.layout')
+@section('title', 'Page not found')
+@section('subtitle', "Oops! Something's missing.")
+@section('message', "It seems like we dont find what you searched. The page you were looking for doesn't exist, isn't available loading incorrectly.")
+@section('code', 404)
