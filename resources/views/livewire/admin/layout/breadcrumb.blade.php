@@ -27,7 +27,7 @@ new class extends Component {
                     </li>
                 @endunless
             </ol>
-            @if($create === true)
+            @if($create)
                 <button class="btn btn-info d-none d-lg-block m-l-15 text-white">
                     <i class="fa fa-plus-circle"></i> Create New
                 </button>

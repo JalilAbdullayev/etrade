@@ -8,6 +8,6 @@ new class extends Component {
     public function mount() {}
 }; ?>
 
-<div>
-    //
-</div>
+<section>
+    <livewire:admin.layout.breadcrumb/>
+</section>

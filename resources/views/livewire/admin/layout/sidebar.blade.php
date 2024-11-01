@@ -53,6 +53,15 @@ new class extends Component {
                     </a>
                 </li>
                 <li>
+                    <a class="waves-effect waves-dark" href="{{ route('admin.settings') }}" wire:navigate
+                       aria-expanded="false">
+                        <i class="icons-Gears"></i>
+                        <span class="hide-menu">
+                            Settings
+                        </span>
+                    </a>
+                </li>
+                <li>
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="icon-speedometer"></i>
                         <span class="hide-menu">

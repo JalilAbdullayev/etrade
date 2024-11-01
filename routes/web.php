@@ -21,6 +21,7 @@ Route::middleware(['auth', 'verified'])->group(function() {
 
     Route::prefix('admin')->name('admin.')->group(function() {
         Volt::route('/', 'admin.index')->name('index');
+        Volt::route('settings', 'admin.settings')->name('settings');
     });
 });
 

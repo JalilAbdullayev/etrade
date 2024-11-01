@@ -6,26 +6,15 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('back/images/favicon.png')}}"/>
+    <link rel="icon" type="image/x-icon" href="{{ asset('storage/' . $settings->favicon)}}"/>
     <title>
-        {{ $title ?? 'eTrade Admin' }}
+        {{ $title ?? "$settings->title Admin" }}
     </title>
     <!-- Custom CSS -->
     @vite(['public/back/css/style.min.css'])
+    @yield('css')
 </head>
 <body class="skin-default-dark fixed-layout">
-<!-- ============================================================== -->
-<!-- Preloader - style you can find in spinners.css -->
-<!-- ============================================================== -->
-<div class="preloader">
-    <div class="loader">
-        <div class="loader__figure"></div>
-        <p class="loader__label">
-            eTrade
-        </p>
-    </div>
-</div>
-<!-- ============================================================== -->
 <!-- Main wrapper - style you can find in pages.scss -->
 <!-- ============================================================== -->
 <div id="main-wrapper">
@@ -42,14 +31,9 @@
                     <!-- Logo icon -->
                     <b>
                         <!-- Light Logo icon -->
-                        <img src="{{ asset('back/images/logo-light-icon.png')}}" alt="homepage" class="light-logo"/>
+                        <img src="{{ asset('storage/' . $settings->logo)}}" alt="homepage" class="light-logo"/>
                     </b>
                     <!--End Logo icon -->
-                    <!-- Logo text -->
-                    <span>
-                        <!-- Light Logo text -->
-                        <img src="{{ asset('back/images/logo-light-text.png')}}" class="light-logo" alt="homepage"/>
-                    </span>
                 </a>
             </div>
             <!-- ============================================================== -->
@@ -92,24 +76,9 @@
         <!-- ============================================================== -->
         <div class="container-fluid">
             <!-- ============================================================== -->
-            <!-- Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <livewire:admin.layout.breadcrumb/>
-            <!-- ============================================================== -->
-            <!-- End Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
             <!-- Start Page Content -->
             <!-- ============================================================== -->
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-body">
-                            {{ $slot }}
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {{ $slot }}
             <!-- ============================================================== -->
             <!-- End PAge Content -->
             <!-- ============================================================== -->
@@ -155,5 +124,6 @@
 <script src="{{ asset('back/node_modules/sparkline/jquery.sparkline.min.js')}}"></script>
 <!--Custom JavaScript -->
 <script src="{{ asset('back/js/custom.min.js')}}"></script>
+@yield('js')
 </body>
 </html>

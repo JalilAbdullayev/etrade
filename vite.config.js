@@ -17,7 +17,8 @@ export default defineConfig({
                 'public/front/css/vendor/magnific-popup.css',
                 'public/front/css/vendor/base.css',
                 'public/front/css/style.min.css',
-                'public/back/css/style.min.css'
+                'public/back/css/style.min.css',
+                'public/back/node_modules/toast-master/css/jquery.toast.css'
             ],
             refresh: true,
         }),
